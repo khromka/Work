@@ -1,5 +1,6 @@
 import argparse
 from pathlib import Path
+from PIL import Image, UnidentifiedImageError
 
 parser = argparse.ArgumentParser(
     description="Show information about an image file"
@@ -21,4 +22,19 @@ if not image_path.exists():
 elif not image_path.is_file():
    print("Error: path is not a file")
 else:
-    print("File exists")
+    try:
+       with Image.open(image_path) as image:
+
+           image.verify()
+       with Image.open(image_path) as image:
+
+           print("File exists")
+           print("Format:", image.format)
+           print("Mode:", image.mode)
+           print("Size:", image.size)
+
+    except UnidentifiedImageError:
+       print("Error: file is not a valid image")
+
+    except Exception as error:
+       print(f"Unexpected error: {error}")
