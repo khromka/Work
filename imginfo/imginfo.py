@@ -10,7 +10,6 @@ parser.add_argument(
     "image",
     help="Path to image file"
 )
-
 args = parser.parse_args()
 
 image_path = Path(args.image)
@@ -26,7 +25,6 @@ else:
        with Image.open(image_path) as image:
 
            image.verify()
-       with Image.open(image_path) as image:
 
            print("File exists")
            print("Format:", image.format)
