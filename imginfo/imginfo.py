@@ -30,8 +30,9 @@ elif not image_path.is_file():
 else:
     try:
        with Image.open(image_path) as image:
-
            image.verify()
+
+       with Image.open(image_path) as image:
 
            #added file size
            file_size = os.path.getsize(image_path)
