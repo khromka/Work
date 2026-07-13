@@ -63,7 +63,7 @@ else:
            format_colors = {
                 "PNG": "[green]PNG[/green]",
                 "JPEG": "[yellow]JPEG[/yellow]",
-                "JPG": "[blue]JPG[/blue]",
+                "JPG": "[red]JPG[/red]",
                 "GIF": "[cyan]GIF[/cyan]",
                 "WEBP": "[magenta]WEBP[/magenta]",
                 "BMP": "[blue]BMP[/blue]"
